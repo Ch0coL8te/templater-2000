@@ -17,28 +17,97 @@
                 <div class="col-sm-10 col-sm-offset-1">
                     <form class="main-form">
                         <div class="form-group">
-                            <label for="CompanyName">Название компании</label>
-                            <input type="text" class="form-control" id="CompanyName" placeholder="ООО &quot;Ромашка&quot;" data-target="company-name">
+                            <label for="CompanyFullName">Полное наименование компании</label>
+                            <input type="text" class="form-control" id="CompanyFullName" placeholder="Общество с ограниченной ответственностью &quot;Ромашка&quot;" data-target="company-name-full">
+                        </div>
+                        <div class="form-group">
+                            <label for="CompanyName">Краткое наименование компании</label>
+                            <input type="text" class="form-control" id="CompanyName" placeholder="ООО &quot;Ромашка&quot;" data-target="company-name-short">
                         </div>
                         <div class="form-group">
                             <label for="CompanyId">ИНН</label>
-                            <input type="text" class="form-control" id="CompanyId" placeholder="7842357865">
+                            <input type="text" class="form-control" id="CompanyId" data-target="company-inn" placeholder="7842357865">
                         </div>
-                        <button type="submit" class="btn btn-default" id="make">Готово</button>
+                        <button type="submit" class="btn btn-primary" id="make">Готово</button>
                     </form>
                     <hr>
                     <div class="document">
-                        <h3>Название комании:</h3>
-                        <p data-id="company-name">&nbsp;</p>
-                        <h3>ИНН</h3>
-                        <p data-id="">&nbsp;</p>
+<!--
+                        <h4>Полное наименование комании:</h4>
+                        <p data-id="company-name-full">&nbsp;</p>
+                        <h4>Краткое наименование комании:</h4>
+                        <p data-id="company-name-short">&nbsp;</p>
+                        <h4>ИНН</h4>
+                        <p data-id="company-inn">&nbsp;</p>
+-->
+                        
+                        <div class="text-right">
+                            <p>Главное управление МЧС России<br> по г.Санкт-Петербургу</p>
+                        </div>
+                        <br>
+                        <div class="text-center">
+                            <h3><strong>Заявление</strong></h3>
+                            <p>о предоставлении лицензии (для юридического лица)</p>
+                        </div>
+                        <div class="main-section">
+                            <ul class="list-unstyled">
+                                <li><strong>Заявитель:</strong> <span data-id="companyFullName">Общество с ограниченной ответственностью "Лейма"</span>, <span data-id="companyShortName">ООО "Лейма"</span></li>
+                                <li><strong>Адрес места нахождения</strong> <span class="text-muted">(включая адреса филиалов, представительств и иных обособленных подразделений)</li>
+                                <li>
+                                    <ul>
+                                        <li><span data-id="companyFirstAddress">191014, г.Санкт-Петербург, ул.Жуковского, д.22, лит.А</span></li>
+                                        <li><span data-id="comanyLicenseAddress">194295, г.Санкт-Петербург, бульвар Поэтический, д.2, лит.А</span></li>
+                                    </ul> 
+                                </li>           
+                                <li><strong>Адреса мест осуществления лицензируемого вида деятельности</strong></li>
+                                <li>
+                                    <ul>
+                                        <li><span data-id="companyLicenseAddress">194295, г.Санкт-Петербург, бульвар Поэтический, д.2, лит.А</span></li>
+                                    </ul>
+                                </li>
+                                <li><strong>Почтовый адрес</strong></li>
+                                <li>
+                                    <ul>
+                                        <li>
+                                            <span data-id="companyPostAddress">191014, г.Санкт-Петербург, ул.Жуковского, д.22, лит.А</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><strong>Телефон:</strong> <span data-id="phone-1">+7 (911) 912-58-80</span>, <span data-id="phone-2">+7 (921) 940-01-35</span></li>
+                                <li><strong>Организационно-прововая форма:</strong> <span data-id="organizationForm">Общество с ограниченной ответственностью</span></li>
+                                <li><strong>ОГРН:</strong> <span data-id="ogrn">1047836006602</span>, <strong>серия свидетельства:</strong> <span data-id="ogrnSeries">78</span> <strong>№</strong> <span data-id="ogrnNumber">004834717</span>, <strong>выдано:</strong> <span data-id="ogrnIssueDate">"25" февраля 2004г.</span></li>
+                                <li><strong>Адрес места нахождения органа, осуществившего государственную регистрацию:</strong></li>
+                                <li>
+                                    <ul>
+                                        <li>191124, Санкт-Петербург, ул. Красного Текстильщика, дом 10-12, литера "О"</li>
+                                    </ul>
+                                </li>
+                                <li><strong>ИНН:</strong> <span data-id="inn">7839011648</span>, <strong>серия свидетельства:</strong> <span data-id="innSeries">78</span> <strong>№</strong> <span data-id="innNumber">009280841</span>, <strong>выдано:</strong> <span data-id="innIssueDate">"26" ноября 2015г.</span></li>
+                                <li><strong>Реквизиты документа, подтверждающего факт уплаты государственной пошлины за предоставление лицензии, либо иные сведения, подтверждающие факт уплаты государственной пошлины:</strong> <span data-id="fee">№463 от 13 июля 2016г.</span></li>
+                                <li><strong>В лице</strong> <span data-id="position">генерального директора</span> <span data-id="CEOFullName">Виноградова Андрея Сергеевича</span> <br><strong>просит предоставить лицензию на осуществление вида деятельности по монтажу, техническому обслуживанию и ремонту средств обеспечения пожарной безопасности зданий и сооружений:</strong></li>
+                                <li>
+                                    <ol>
+                                        <li>Монтаж, техническое обслуживание и ремонт систем пожаротушения и их элементов, включая диспетчеризацию и проведение пусконаладочных работ.</li>
+                                        <li>Монтаж, техническое обслуживание и ремонт систем пожарной и охранно-пожарной сигнализации и их элементов, включая диспетчеризацию и проведение пусконаладочных работ.</li>
+                                        <li>Монтаж, техническое обслуживание и ремонт систем противопожарного водоснабжения и их элементов, включая диспетчеризацию и проведение пусконаладочных работ.</li>
+                                        <li>Монтаж, техническое обслуживание и ремонт систем (элементов систем) дымоудаления и противодымной вентиляции, включая диспетчеризацию и проведение пусконаладочных работ.</li>
+                                        <li>Монтаж, техническое обслуживание и ремонт систем оповещения и эвакуации при пожаре и их элементов, включая диспетчеризацию и проведение пусконаладочных работ.</li>
+                                        <li>Монтаж, техническое обслуживание и ремонт фотолюминесцентных эвакуационных систем и их элементов.</li>
+                                        <li>Монтаж, техническое обслуживание и ремонт противопожарных занавесов и завес, включая диспетчеризацию и проведение пусконаладочных работ.</li>
+                                        <li>Монтаж, техническое обслуживание и ремонт заполнений проемов в противопожарных преградах.</li>
+                                        <li>Устройство (кладка, монтаж), ремонт, облицовка, теплоизоляция и очистка печей, каминов, других теплогенерирующих установок и дымоходов.</li>
+                                        <li>Выполнение работ по огнезащите материалов, изделий и конструкций.</li>
+                                        <li>Монтаж, техническое обслуживание и ремонт первичных средств пожаротушения.</li>
+                                    </ol>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        
         <script src="js/jquery.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/app.js"></script>

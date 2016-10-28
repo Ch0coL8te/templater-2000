@@ -1,3 +1,15 @@
+body {
+    font-size: 18px;
+}
 .main-form {
     margin: 50px 0 50px;
+}
+.document {
+    margin-bottom: 50px;
+}
+
+@media print {
+    body {
+        font-size: 20px;
+    }
 }
