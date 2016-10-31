@@ -1,0 +1,20 @@
+{
+    "ООО Ромашка": {
+        "companyFullName": "Общество с ограниченной ответсвенностью \"Ромашка\"",
+        "companyShortName": "ООО \"Ромашка\"",
+        "companyLicenseAddress": "198085, ул.Шкапина, д.4",
+        "companyFirstAddress": "198085, Рузовская, 14 кв.12"
+    },
+    "ООО Залупа": {
+        "companyFullName": "Общество с ограниченной ответсвенностью \"Залупа\"",
+        "companyShortName": "ООО \"Залупа\"",
+        "companyLicenseAddress": "198085, ул.Шляпина, д.2",
+        "companyFirstAddress": "198085, Рузовская, 125 кв.12"
+    },
+    "ООО Кодер": {
+        "companyFullName": "Общество с ограниченной ответсвенностью \"Кодер\"",
+        "companyShortName": "ООО \"Кодер\"",
+        "companyLicenseAddress": "198085, ул.Папина, д.8",
+        "companyFirstAddress": "198085, Рузовская, 154 кв.12"
+    }
+}
