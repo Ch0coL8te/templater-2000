@@ -1,5 +1,5 @@
 body {
-    font-size: 18px;
+/*    font-size: 18px;*/
 }
 .main-form {
     margin: 50px 0 50px;
@@ -8,11 +8,9 @@ body {
     margin-bottom: 50px;
 }
 
+
 @media print {
-    body {
-        font-size: 20px;
-    }
-    #print-pdf {
+    .main-form {
         display: none;
     }
 }
