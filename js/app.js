@@ -14,7 +14,7 @@ $(function() {
     };
 
     let updateCompanies = () => {
-        $companySelect.empty();                                 
+        $companySelect.empty();
         addCompany('new', {companyShortName: 'Новая компания'});
         $.each(companies, addCompany);
     };
@@ -23,30 +23,30 @@ $(function() {
         let companyKey = $companySelect.val();  // Searching selected item value (as a key) in "database"
         if (companyKey === 'new') {             // If key is 'new'
             companyKey = Date.now();            // then set it to unique 'Date' value (numbers)
-            companies[companyKey] = {};         
+            companies[companyKey] = {};
         }
         let company = companies[companyKey];
 
         $('[data-target]').each(function () {            // For each input with 'data-target'
             let $this = $(this);                         // we are sending a value in span with the same 'data-id' value
             let id = $this.data('target');
-            let $target = $('[data-id="' + id + '"]');   
+            let $target = $('[data-id="' + id + '"]');
             let val = $this.val();
             $target.text(val);
             company[id] = val;
         });
-        
+
         let finalDocument = $('.document');
         finalDocument.show(2000); // Document appear when btn is clicked
-        
-        
+
+
         ipcRenderer.send('storage:update', companies);  // Sending 'sotage:update' event to Main Process
-        updateCompanies();              
+        updateCompanies();
 
         return false;
     });
-                    
-    $companySelect.change(function () {                
+
+    $companySelect.change(function () {
         let $this = $(this);
         let company = companies[$this.val()];
         if (company == null) {
@@ -64,7 +64,8 @@ $(function() {
     const printPDFBtn = document.getElementById('print-pdf');
 
     printPDFBtn.addEventListener('click', function (event) {
-        event.preventDefault;
+        event.preventDefault();   // Should I use 'event'?
+        event.stopPropagation();  // trying to stop window from reload when btn is clicked
         ipc.send('print-to-pdf');
     })
 
@@ -72,10 +73,10 @@ $(function() {
         const message = `Файл сохранен в: ${path}`
         document.getElementById('pdf-path').innerHTML = message
     })
-    
-    
+
+
     updateCompanies();
-    
-    
-    
+
+
+
 });
