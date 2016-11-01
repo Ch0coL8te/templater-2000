@@ -16,11 +16,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-10 offset-xs-1">
-                    
+
                     <form class="main-form">
-                        <select class="companySelect mb-1 custom-select">
-                            <option selected>Выберите компанию</option>
-                        </select>
+                        <select class="companySelect mb-1 custom-select"></select>
                        <hr>
                        <h3>Основная информация</h3>
                        <hr>
@@ -30,7 +28,7 @@
                         </div>
                         <div class="form-group">
                             <label for="companyShortName">Краткое наименование организации</label>
-                            <input type="text" class="form-control" id="companyShortName" placeholder="ООО &quot;Ромашка&quot;" data-target="companyShortName">
+                            <input type="text" class="form-control" id="companyShortName" placeholder="ООО &quot;Ромашка&quot;" data-target="companyShortName" required>
                         </div>
                         <div class="form-group">
                             <label for="companyFirstAddress">Юридический адрес организации</label>
@@ -56,7 +54,7 @@
                             <label for="organizationForm">Организационно-правовая форма</label>
                             <input type="text" class="form-control" id="organizationForm" data-target="organizationForm" placeholder="Общество с ограниченной ответственностью">
                         </div>
-                        
+
                         <h3 class="mt-3">Свидетельство ОГРН</h3>
                         <hr>
                         <div class="form-group">
@@ -74,8 +72,8 @@
                         <div class="form-group">
                             <label for="ogrnIssueDate">Дата выдачи свидетельства</label>
                             <input type="date" class="form-control" id="ogrnIssueDate" data-target="ogrnIssueDate">
-                        </div>                    
-                        
+                        </div>
+
                         <h3 class="mt-3">Свидетельство ИНН</h3>
                         <hr>
                         <div class="form-group">
@@ -94,14 +92,14 @@
                             <label for="innIssueDate">Дата выдачи свидетельства</label>
                             <input type="date" class="form-control" id="innIssueDate" data-target="innIssueDate">
                         </div>
-                        
+
                         <h3 class="mt-3">Пошлина</h3>
                         <hr>
                         <div class="form-group">
                             <label for="fee">Реквизиты пошлины</label>
                             <input type="text" class="form-control" id="fee" data-target="fee" placeholder="№436 от 15 января 2004г.">
                         </div>
-                        
+
                         <h3 class="mt-3">Информация о директоре</h3>
                         <hr>
                         <div class="form-group">
@@ -116,11 +114,11 @@
                             <label for="CEOShortName">Фамилия и инициалы директора</label>
                             <input type="text" class="form-control" id="CEOShortName" data-target="CEOShortName" placeholder="Виноградов А.В.">
                         </div>
-                        
+
                         <button type="submit" class="btn btn-primary" id="make">Готово</button>
                     </form>
                     <hr>
-                    <div class="document">                 
+                    <div class="document">
                         <div class="text-xs-right">
                             <p>Главное управление МЧС России<br> по г.Санкт-Петербургу</p>
                         </div>
@@ -137,8 +135,8 @@
                                     <ul>
                                         <li><span data-id="companyFirstAddress">191014, г.Санкт-Петербург, ул.Жуковского, д.22, лит.А</span></li>
                                         <li><span data-id="companyLicenseAddress">194295, г.Санкт-Петербург, бульвар Поэтический, д.2, лит.А</span></li>
-                                    </ul> 
-                                </li>           
+                                    </ul>
+                                </li>
                                 <li><strong>Адреса мест осуществления лицензируемого вида деятельности</strong></li>
                                 <li>
                                     <ul>
@@ -197,13 +195,13 @@
                                             <u><span data-id="CEOShortName">Виноградов А.С.</span></u>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="row ">
                                         <div class="col-xs-4 text-muted small text-xs-center"><em>должность</em></div>
                                         <div class="col-xs-4 text-muted small text-xs-center"><em>(подпись)</em></div>
                                         <div class="col-xs-4 text-muted small text-xs-center"><em>Фамилия, инициалы</em></div>
                                     </div>
-                                    
+
                                 </li>
                             </ul>
                         </div>
