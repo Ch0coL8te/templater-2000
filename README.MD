@@ -1,3 +1,3 @@
 ## TODO: 
 - [ ] add checkboxes and logic
-- [ ] add print to pdf fuctionality
+- [ ] add print to pdf functionality
