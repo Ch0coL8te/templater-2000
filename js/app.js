@@ -1,5 +1,6 @@
 const companies = require('./storage/companies.json');
 const {ipcRenderer} = require('electron');
+const ipc = require('electron').ipcRenderer;
 
 $(function() {
     let $companySelect = $('.companySelect');  // "saving" a DOM element
@@ -59,5 +60,22 @@ $(function() {
         }
     });
 
+    // Print module
+    const printPDFBtn = document.getElementById('print-pdf');
+
+    printPDFBtn.addEventListener('click', function (event) {
+        event.preventDefault;
+        ipc.send('print-to-pdf');
+    })
+
+    ipc.on('wrote-pdf', function (event, path) {
+        const message = `Файл сохранен в: ${path}`
+        document.getElementById('pdf-path').innerHTML = message
+    })
+    
+    
     updateCompanies();
+    
+    
+    
 });

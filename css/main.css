@@ -14,4 +14,7 @@ body {
     .main-form {
         display: none;
     }
+    .document {
+        display: initial;
+    }
 }
