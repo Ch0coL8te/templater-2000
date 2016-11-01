@@ -1,12 +1,12 @@
 const {app, BrowserWindow, ipcMain} = require('electron');
 const storage = require('./storage');
-const print = require('./print.js');
 // Needed for print module
 const fs = require('fs')
 const os = require('os')
 const path = require('path')
 const electron = require('electron')
 const shell = electron.shell
+const ipc = electron.ipcMain
 // END of print
 
 // Keep a global reference of the window object, if you don't, the window will
