@@ -1,2 +1,3 @@
-# TODO: Add a readme
-
+## TODO: 
+- add checkboxes and logic
+- add print to pdf fuctionality
