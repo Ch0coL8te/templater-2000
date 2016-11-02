@@ -64,19 +64,17 @@ $(function() {
     const printPDFBtn = document.getElementById('print-pdf');
 
     printPDFBtn.addEventListener('click', function (event) {
-        event.preventDefault();   // Should I use 'event'?
-        event.stopPropagation();  // trying to stop window from reload when btn is clicked
+        event.preventDefault();
         ipc.send('print-to-pdf');
     })
 
     ipc.on('wrote-pdf', function (event, path) {
-        const message = `Файл сохранен в: ${path}`
-        document.getElementById('pdf-path').innerHTML = message
+        const message = `Файл сохранен в: ${path}`;
+        document.getElementById('pdf-path').innerHTML = message;
     })
 
 
     updateCompanies();
-
 
 
 });
