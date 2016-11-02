@@ -5,18 +5,22 @@ $(function() {
     let $companySelect = $('.companySelect');  // "saving" a DOM element
     let $printPdf = $('#print-pdf');
 
-    let addCompany = (key, value) => {         // Creating options for 'select' element
+    let addCompany = (key, value, selected) => {         // Creating options for 'select' element
         let $option = $('<option>')
             .val(key)
-            .text(value.companyShortName);
+            .text(value.companyShortName)
+            .prop('selected', key === selected);
 
         $companySelect.append($option);
     };
 
     let updateCompanies = () => {
+        let selectedCompany = $companySelect.val();
         $companySelect.empty();
         addCompany('new', {companyShortName: 'Новая компания'});
-        $.each(companies, addCompany);
+        $.each(companies, (key, value) => {
+            addCompany(key, value, selectedCompany);
+        });
     };
 
     $('.main-form').submit(function() {
@@ -62,7 +66,9 @@ $(function() {
 
     // Print module
     $printPdf.click(function () {
-        ipcRenderer.send('print-to-pdf');
+        let companyKey = $companySelect.val();
+        let company = companies[companyKey];
+        ipcRenderer.send('print-to-pdf', company);
         return false;
     });
 
