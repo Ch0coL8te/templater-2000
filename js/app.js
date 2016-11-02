@@ -40,8 +40,8 @@ $(function() {
             company[id] = val;
         });
 
-        let finalDocument = $('.document');
-        finalDocument.show(2000); // Document appear when btn is clicked
+        $('.document').show(); // Document appear when btn is clicked
+        $('body').animate({scrollTop: $printPdf.offset().top - 10}, 700);
 
         ipcRenderer.send('storage:update', companies);  // Sending 'storage:update' event to Main Process
         $printPdf.prop('disabled', false);
