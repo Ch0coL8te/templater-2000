@@ -1,9 +1,9 @@
 const companies = require('./storage/companies.json');
 const {ipcRenderer} = require('electron');
-const ipc = require('electron').ipcRenderer;
 
 $(function() {
     let $companySelect = $('.companySelect');  // "saving" a DOM element
+    let $printPdf = $('#print-pdf');
 
     let addCompany = (key, value) => {         // Creating options for 'select' element
         let $option = $('<option>')
@@ -39,8 +39,8 @@ $(function() {
         let finalDocument = $('.document');
         finalDocument.show(2000); // Document appear when btn is clicked
 
-
-        ipcRenderer.send('storage:update', companies);  // Sending 'sotage:update' event to Main Process
+        ipcRenderer.send('storage:update', companies);  // Sending 'storage:update' event to Main Process
+        $printPdf.prop('disabled', false);
         updateCompanies();
 
         return false;
@@ -61,20 +61,10 @@ $(function() {
     });
 
     // Print module
-    const printPDFBtn = document.getElementById('print-pdf');
-
-    printPDFBtn.addEventListener('click', function (event) {
-        event.preventDefault();
-        ipc.send('print-to-pdf');
-    })
-
-    ipc.on('wrote-pdf', function (event, path) {
-        const message = `Файл сохранен в: ${path}`;
-        document.getElementById('pdf-path').innerHTML = message;
-    })
-
+    $printPdf.click(function () {
+        ipcRenderer.send('print-to-pdf');
+        return false;
+    });
 
     updateCompanies();
-
-
 });
