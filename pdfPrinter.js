@@ -1,7 +1,7 @@
 const fs = require('fs');
 const {BrowserWindow, shell, dialog} = require('electron');
 
-exports.handlePrintEvent = (event, company) => {
+exports.handlePrintEvent = (event, companyShortName) => {
     let win = BrowserWindow.fromWebContents(event.sender);
 
     return new Promise((resolve, reject) => {
@@ -12,7 +12,7 @@ exports.handlePrintEvent = (event, company) => {
         });
     }).then(data => {
         let pdfPath = dialog.showSaveDialog(win, {
-            defaultPath: `${company.companyShortName}.pdf`, // company.companyShortName + '.pdf'
+            defaultPath: `${companyShortName}.pdf`, // companyShortName + '.pdf'
             filters: [
                 {name: 'PDF document', extensions: ['pdf']}
             ]

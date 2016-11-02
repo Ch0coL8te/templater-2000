@@ -66,9 +66,8 @@ $(function() {
 
     // Print module
     $printPdf.click(function () {
-        let companyKey = $companySelect.val();
-        let company = companies[companyKey];
-        ipcRenderer.send('print-to-pdf', company);
+        let companyShortName = $('[data-id="companyShortName"]').eq(0).text();
+        ipcRenderer.send('print-to-pdf', companyShortName);
         return false;
     });
 
