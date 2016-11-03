@@ -66,7 +66,7 @@ $(function() {
 
     // Print module
     $printPdf.click(function () {
-        let companyShortName = $('[data-id="companyShortName"]').eq(0).text();
+        let companyShortName = $('[data-id="companyShortName"]').eq(0).text().replace(/"/g, ''); // replace() is replacing every " with an empty string
         ipcRenderer.send('print-to-pdf', companyShortName);
         return false;
     });
