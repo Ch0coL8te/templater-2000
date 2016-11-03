@@ -47,7 +47,7 @@ $(function() {
         $printPdf.prop('disabled', false);
         updateCompanies();
 
-        return false;
+        return false; // preventDefault
     });
 
     $companySelect.change(function () {
